@@ -1,0 +1,22 @@
+{
+  "brand" : "SITI",
+  "logo" : "logo.svg",
+  "links" : [
+    {
+      "title" : "Leistungen",
+      "href" : "/#leistungen"
+    },
+    {
+      "title" : "Kontakt",
+      "href" : "/#kontakt"
+    },
+    {
+      "title" : "Impressum",
+      "href" : "/impressum/"
+    },
+    {
+      "title" : "Datenschutz",
+      "href" : "/datenschutz/"
+    }
+  ]
+}

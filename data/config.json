@@ -1,0 +1,10 @@
+{
+	"components" : [
+		"cover",
+		"features",
+		"contact"
+	],
+	"contact": {
+		"error": "Ihre Nachricht kann im Augenblick nicht verschickt werden. Sie erreichen uns jedoch weiterhin via E-Mail und Telefon."
+	}
+}

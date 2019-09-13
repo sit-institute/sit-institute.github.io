@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <title>
+ 			{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}
+    </title>
+    <meta charset="utf-8">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ "css/font-gothic.css" | absURL }}" rel="stylesheet">
+    <link href="{{ "css/cookieconsent.css" | absURL }}" rel="stylesheet">
+    <link href="{{ "favicon.png" | absURL }}" rel="icon" />
+    <link rel="apple-touch-icon" href="{{ "favicon.png" | absURL }}" />
+
+    <!-- og -->
+    <meta name="og:title" content="{{ .Title }}"/>
+	<meta name="og:url" content="{{ .Permalink }}"/>
+	{{ if .Params.featuredimage }}
+	<meta name="og:image" content="{{ .Params.featuredimage | absURL}}"/>
+	{{ end }}
+	{{ if .Params.description }}
+  <meta name="og:description" content="{{ .Params.description }}"/>
+  <meta name="description" content="{{ .Params.description }}">
+  {{ else }}
+  <meta name="og:description" content="{{ .Site.Data.cover.description }}"/>
+  <meta name="description" content="{{ .Site.Data.cover.description }}">
+  {{ end }}
+	<meta name="og:site_name" content="{{ .Site.Title }}"/>
+		
+
+    <!-- including bootstrap -->
+    <link href="{{ "css/font-opensans.css" | absURL }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/compiled.css"> -->
+
+
+    {{ $sass := resources.Get "/scss/bootstrap.scss" }}
+    {{ $style := $sass | resources.ToCSS | resources.Minify}} 
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}"> 
+    <link href="{{ "css/custom.css" | absURL }}" rel="stylesheet">
+  </head>
+  <body>
+    

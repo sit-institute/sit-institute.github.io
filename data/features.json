@@ -1,0 +1,21 @@
+{
+  "title" : "Unsere Leistungen",
+  "description" : "",
+  "content" : [
+    {
+      "icon" : "search",
+      "title" : "Analyse & Exploration",
+      "description" : ""
+    },
+    {
+      "icon" : "pencil-ruler",
+      "title" : "Design & Prototyping",
+      "description" : ""
+    },
+    {
+      "icon" : "chalkboard-teacher",
+      "title" : "Evaluation & Wissenstransfer",
+      "description" : ""
+    }
+  ]
+}

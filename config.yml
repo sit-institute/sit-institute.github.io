@@ -1,0 +1,23 @@
+baseURL: https://sit.institute/
+languageCode: de-de
+title: Software Integration Technology Institute
+theme: lime
+
+disableKinds:
+- RSS
+
+taxonomies:
+- tag: ''
+  group: ''
+  category: ''
+
+mediaTypes:
+  application/x-php:
+    suffixes:
+    - php
+
+outputFormats:
+  PHP:
+    mediaType: application/x-php
+    isHTML: false
+    isPlainText: true
