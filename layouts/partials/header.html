@@ -8,8 +8,7 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ "css/font-gothic.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "css/cookieconsent.css" | absURL }}" rel="stylesheet">
+
     <link href="{{ "favicon.png" | absURL }}" rel="icon" />
     <link rel="apple-touch-icon" href="{{ "favicon.png" | absURL }}" />
 
@@ -30,14 +29,18 @@
 		
 
     <!-- including bootstrap -->
-    <link href="{{ "css/font-opensans.css" | absURL }}" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/compiled.css"> -->
+    
+    {{ $bootstrap := resources.Get "/scss/bootstrap.scss" | resources.ToCSS | minify }}
+    {{ $custom := resources.Get "/css/custom.css" | minify }}
+    {{ $cookieconsent := resources.Get "/css/cookieconsent.css" | minify }}
+    {{ $questrial := resources.Get "/css/font-questrial.css" | minify }}
+    {{ $opensans := resources.Get "/css/font-opensans.css" | minify }}
+    {{ $gothic := resources.Get "/css/font-gothic.css" | minify }}
 
-
-    {{ $sass := resources.Get "/scss/bootstrap.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Minify}} 
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}"> 
-    <link href="{{ "css/custom.css" | absURL }}" rel="stylesheet">
+    {{ $css := slice $bootstrap $cookieconsent $gothic $questrial $opensans $custom | resources.Concat "bundle.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+    
   </head>
   <body>
     
