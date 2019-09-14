@@ -4,6 +4,9 @@
 		"features",
 		"contact"
 	],
+	"site": {
+		"description": "Wir erforschen Lösungsansätze, entwickeln innovative Konzepte und bieten umfassende Beratung zur Integration von Softwaresystemen."
+	},
 	"contact": {
 		"error": "Ihre Nachricht kann im Augenblick nicht verschickt werden. Sie erreichen uns jedoch weiterhin via E-Mail und Telefon."
 	}
