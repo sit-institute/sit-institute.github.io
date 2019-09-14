@@ -1,7 +1,5 @@
 ---
 title: "Impressum"
-date: 2019-09-13T09:00:26+02:00
-draft: false
 ---
 
 ## Angaben gemäß § 5 TMG

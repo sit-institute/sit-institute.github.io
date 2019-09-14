@@ -1,6 +1,5 @@
 ---
 title: Nachricht versandt
-date: 2019-09-13T09:00:26+02:00
 showInSitemap: false
 ---
 
