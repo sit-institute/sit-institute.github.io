@@ -21,3 +21,5 @@ outputFormats:
     mediaType: application/x-php
     isHTML: false
     isPlainText: true
+
+enableGitInfo: true
