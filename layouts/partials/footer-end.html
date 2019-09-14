@@ -18,12 +18,16 @@
     {{ $poppler := resources.Get "js/poppler.js" | minify }}
     {{ $cookieConsent := resources.Get "js/cookieconsent.js" | minify }}
     {{ $fontawesome := resources.Get "js/fontawesome.js" | minify }}
+    {{ $hypher := resources.Get "js/hypher.js" | minify }}
+    {{ $hypherDe := resources.Get "js/hypher-de.js" | minify }}
     {{ $lime := resources.Get "js/script.js" | minify }}
     
-    {{ $script := slice $jquery $bootstrap $notify $poppler $cookieConsent $fontawesome $lime | resources.Concat "bundle.js" | fingerprint }}
+    {{ $script := slice $jquery $bootstrap $notify $poppler $cookieConsent $fontawesome $hypher $hypherDe $lime | resources.Concat "bundle.js" | fingerprint }}
     <script type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 
     <script type="text/javascript">
+      $('p').hyphenate('de');
+
       window.addEventListener("load", function(){
         window.cookieconsent.initialise({
           "palette": {
@@ -44,5 +48,31 @@
         })
       });
       </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Software Integration Technology Institute",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Deubener Straße 6",
+            "addressLocality": "Dresden",
+            "addressRegion": "Sachsen",
+            "postalCode": "01159"
+          },
+          "image": "https://sit.institute/images/logo.png",
+          "email": "info@sit.institute",
+          "telePhone": "+49 (0) 351 463 386 08",
+          "url": "https://sit.institute",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.042170",
+            "longitude": "13.692320"
+          },
+          "priceRange":"€"
+        
+        }
+        </script>
   </body>
 </html>
