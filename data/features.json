@@ -1,21 +1,21 @@
 {
-  "title" : "Unsere Leistungen",
-  "description" : "",
+  "title" : "Leistungen",
+  "description" : "Mit einem dreistufigen Prozess unterstützen wir Sie bei Herausforderungen rund um Ihre Software-Landschaft.",
   "content" : [
     {
       "icon" : "search",
       "title" : "Analyse & Exploration",
-      "description" : ""
+      "description" : "Auf Grund­lage Ihres Exper­ten­wis­sens, vor­han­de­ner Schnitt­stel­len und Infra­struk­tur ana­ly­sie­ren wir Ihren Bedarf. Anfor­de­rungs­er­fas­sung und Explo­ra­tion hel­fen bei der Erwei­te­rung Ihrer beste­hen­den, sowie der Ent­wick­lung neuer Sys­teme mit­tels moder­ner Lösun­gs­tech­no­lo­gien und Migra­ti­ons­stra­te­gien." 
     },
     {
       "icon" : "pencil-ruler",
       "title" : "Design & Prototyping",
-      "description" : ""
+      "description" : "Das Design beinhaltet Auswahl und konzeptuelle Integration etablierter Technologien sowie die Entwicklung von Komponenten zu einer skalierenden und zukunftsfähigen Architektur. Die Strategie umfasst technische Prototypen, moderne und agile Vorgehensweisen sowie die Adaption aktueller Softwarewerkzeuge."
     },
     {
       "icon" : "chalkboard-teacher",
       "title" : "Evaluation & Wissenstransfer",
-      "description" : ""
+      "description" : "Zum Transfer von neuen Lösungen und Strategien in Ihr Unternehmen bieten wir detaillierte Untersuchungen ausgewählter Technologien sowie deren Dokumentation und darauf aufbauende Schulungen oder Workshops für Ihr Personal. Wir beraten Sie gern zu Softwaretechnologie, Werkzeugen und Methoden und vermitteln Partner aus Industrie und Wissenschaft."
     }
   ]
 }
