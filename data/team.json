@@ -1,35 +1,23 @@
 {
-  "title" : "Team",
-  "description" : "Little team description here",
+  "title" : "Das Team",
+  "description" : "Wir sind zwei aus Wissenschaft und Forschung stammende Softwaretechnologen,</br>die mit ihrer Erfahrung den Wissenstransfer in die Industrie unterstützen möchten.",
   "members" : [
     {
-      "name" : "Sarita",
-      "description" : "CEO",
-      "avatar" : "sarita.jpeg",
+      "name" : "Karsten Wendt",
+      "description" : "Gesellschafter</br>Lösungsdesign",
+      "avatar" : "karsten.jpg",
       "social" : {
-        "facebook" : "https://facebook.com/damn",
-        "instagram" : "https://instagram.com/damn",
-        "linkedin" : "https://linkedin.com/add/damn"
+        "link": { "url": "https://tu-dresden.de/ing/informatik/smt/st", "type": "fa" },
+        "xing": { "url": "https://www.xing.com/profile/Karsten_Wendt12/cv", "type": "fab" }
       }
     },
     {
-      "name" : "Veronica",
-      "description" : "Graphics Designer",
-      "avatar" : "veronica.jpeg",
+      "name" : "Peter Heisig",
+      "description" : "Gesellschafter</br>Implementierung",
+      "avatar" : "peter.jpg",
       "social" : {
-        "twitter" : "https://twitter.com/damn",
-        "instagram" : "https://instagram.com/damn",
-        "dribbble" : "https://dribbble.com/add/damn"
-      }
-    },
-    {
-      "name" : "John",
-      "description" : "Graphics Designer",
-      "avatar" : "john.jpeg",
-      "social" : {
-        "linkedin" : "https://linkedin.com/damn",
-        "instagram" : "https://instagram.com/damn",
-        "medium" : "https://medium.com/add/damn"
+        "link" : { "url": "https://pehei.de", "type": "fa" },
+        "xing": { "url": "https://www.xing.com/profile/Peter_Heisig4/cv", "type": "fab" }
       }
     }
   ]

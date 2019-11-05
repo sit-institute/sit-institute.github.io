@@ -2,6 +2,7 @@
 	"components" : [
 		"cover",
 		"features",
+		"team",
 		"contact"
 	],
 	"site": {
