@@ -32,8 +32,9 @@
     {{ $cookieconsent := resources.Get "/css/cookieconsent.css" | minify }}
     {{ $opensans := resources.Get "/css/font-opensans.css" | minify }}
     {{ $gothic := resources.Get "/css/font-gothic.css" | minify }}
+    {{ $timeline := resources.Get "/scss/timeline.scss" | resources.ToCSS | minify }}
 
-    {{ $css := slice $bootstrap $cookieconsent $gothic $opensans $custom | resources.Concat "bundle.css" | fingerprint }}
+    {{ $css := slice $bootstrap $cookieconsent $gothic $opensans $timeline $custom | resources.Concat "bundle.css" | fingerprint }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
     
   </head>
