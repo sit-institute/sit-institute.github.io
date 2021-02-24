@@ -6,8 +6,8 @@ title: "Impressum"
 
 Software Integration Technology Institute,  
 Karsten Wendt, Peter Heisig GbR  
-Deubener Straße 6  
-01159 Dresden
+Seeligstraße 7  
+01465 Langebrück
 
 Vertreten durch Dr. Karsten Wendt und Peter Heisig
 

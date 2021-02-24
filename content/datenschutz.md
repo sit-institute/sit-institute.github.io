@@ -63,8 +63,8 @@ Verantwortlicher im Sinne der Datenschutz-Grundverordnung, sonstiger in den Mitg
 
 Software Integration Technology Institute,  
 Karsten Wendt, Peter Heisig GbR  
-Deubener Straße 6  
-01159 Dresden  
+Seeligstraße 7  
+01465 Langebrück  
 Deutschland
 
 Tel.: +49 (0) 351 463 386 08  
