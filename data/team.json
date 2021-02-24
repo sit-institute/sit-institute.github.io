@@ -4,7 +4,7 @@
   "members" : [
     {
       "name" : "Karsten Wendt",
-      "description" : "Gesellschafter</br>Lösungsdesign",
+      "description" : "Analyse & Lösungsdesign",
       "avatar" : "karsten.jpg",
       "social" : {
         "link": { "url": "https://tu-dresden.de/ing/informatik/smt/st", "type": "fa" },
@@ -13,7 +13,7 @@
     },
     {
       "name" : "Peter Heisig",
-      "description" : "Gesellschafter</br>Implementierung",
+      "description" : "Analyse & Implementierung",
       "avatar" : "peter.jpg",
       "social" : {
         "link" : { "url": "https://pehei.de", "type": "fa" },
