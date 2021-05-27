@@ -1,6 +1,7 @@
 ---
 title: ""
 showInSitemap: false
+draft: true
 ---
 
 {{< figure src="/images/hackathon.png" width="100%" >}}
