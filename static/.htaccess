@@ -6,8 +6,6 @@ ErrorDocument 404 /404/index.html
 
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^(.*)$ https://%1/$1 [R=301]
-
-    Redirect 301 /webinar https://20840.webinaris.co/10920/verstreut___csv__excel__datenbanken_und_co__beherrschen.html?mode=L&v=4
 </IfModule>
 
 <IfModule mod_headers.c>
