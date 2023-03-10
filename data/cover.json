@@ -5,7 +5,8 @@
 	"alt_text" : "oder Details erfahren",
 	"alt_href" : "#leistungen",
 	"button" : {
-		"text" : "Kontakt",
-		"href" : "#kontakt"
+		"text" : "Kennenlernen",
+		"href" : "#kontakt",
+		"cal_link": "sit-institute/kennenlernen"
 	}
 }
