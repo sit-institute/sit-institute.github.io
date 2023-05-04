@@ -22,7 +22,7 @@
     {{ $lime := resources.Get "js/script.js" | minify }}
     
     {{ $script := slice $jquery $bootstrap $notify $poppler $cookieConsent $fontawesome $hypher $hypherDe $lime | resources.Concat "bundle.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+    <script type="text/javascript" src="{{ $script.Permalink }}"></script>
 
     <script type="text/javascript">
       $('p').hyphenate('de');

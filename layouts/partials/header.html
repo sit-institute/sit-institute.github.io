@@ -35,7 +35,7 @@
     {{ $timeline := resources.Get "/scss/timeline.scss" | resources.ToCSS | minify }}
 
     {{ $css := slice $bootstrap $cookieconsent $gothic $opensans $timeline $custom | resources.Concat "bundle.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $css.Permalink }}">
     
   </head>
   <body>
