@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /versandt/
+Sitemap: https://sit.institute/sitemap.xml
+Test
