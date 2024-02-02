@@ -8,7 +8,7 @@
       "avatar" : "karsten.jpg",
       "social" : {
         "link": { "url": "https://tu-dresden.de/ing/informatik/smt/st", "type": "fa" },
-        "xing": { "url": "https://www.xing.com/profile/Karsten_Wendt12/cv", "type": "fab" }
+        "linkedin": { "url": "https://www.linkedin.com/in/karsten-wendt-b23301263/", "type": "fab" }
       }
     },
     {
@@ -16,8 +16,8 @@
       "description" : "Analyse & Implementierung",
       "avatar" : "peter.jpg",
       "social" : {
-        "link" : { "url": "https://pehei.de", "type": "fa" },
-        "xing": { "url": "https://www.xing.com/profile/Peter_Heisig4/cv", "type": "fab" }
+        "link" : { "url": "https://peter.heisig.rocks", "type": "fa" },
+        "linkedin": { "url": "https://www.linkedin.com/in/peter-heisig/", "type": "fab" }
       }
     }
   ]
