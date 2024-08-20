@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="36.411999mm"
+   height="33.959801mm"
+   viewBox="0 0 36.411999 33.959801"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(36.862621,-83.406898,-83.406898,-36.862621,155.33243,118.5391)"
+       spreadMethod="pad"
+       id="linearGradient352">
+      <stop
+         style="stop-opacity:1;stop-color:#66c430"
+         offset="0"
+         id="stop348" />
+      <stop
+         style="stop-opacity:1;stop-color:#66c430"
+         offset="0.0579048"
+         id="stop349" />
+      <stop
+         style="stop-opacity:1;stop-color:#66c430"
+         offset="0.61739341"
+         id="stop350" />
+      <stop
+         style="stop-opacity:1;stop-color:#a6d829"
+         offset="0.794032"
+         id="stop351" />
+      <stop
+         style="stop-opacity:1;stop-color:#a6d829"
+         offset="1"
+         id="stop352" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(20.97072,-88.745659,-88.745659,-20.97072,192.4301,129.11653)"
+       spreadMethod="pad"
+       id="linearGradient357">
+      <stop
+         style="stop-opacity:1;stop-color:#7dcb29"
+         offset="0"
+         id="stop353" />
+      <stop
+         style="stop-opacity:1;stop-color:#7dcb29"
+         offset="0.0169931"
+         id="stop354" />
+      <stop
+         style="stop-opacity:1;stop-color:#7dcb29"
+         offset="0.58223233"
+         id="stop355" />
+      <stop
+         style="stop-opacity:1;stop-color:#abd91a"
+         offset="0.724349"
+         id="stop356" />
+      <stop
+         style="stop-opacity:1;stop-color:#abd91a"
+         offset="1"
+         id="stop357" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath359">
+      <path
+         d="M 0,170.079 H 399.938 V 0 H 0 Z"
+         transform="translate(-224.56498,-49.250304)"
+         id="path359" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-87.841666,-132.55626)">
+    <g
+       id="g1"
+       transform="translate(0.99985577,0.93252171)">
+      <rect
+         style="fill:#000000;stroke:#404040;stroke-width:0.832644;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         id="rect855"
+         width="33.579643"
+         height="31.262117"
+         x="88.257988"
+         y="132.97258"
+         rx="2.664335"
+         ry="2.4804535" />
+      <g
+         id="g855"
+         transform="matrix(0.26458333,0,0,0.26458333,-692.9698,119.39227)">
+        <path
+           id="path352"
+           d="M 199.781,92.438 148.089,56.127 c -2.924,-2.207 -1.364,-6.865 2.299,-6.865 v 0 h 51.694 c 2.108,0 3.817,1.709 3.817,3.817 v 0 36.312 c 0,2.262 -1.856,3.825 -3.833,3.825 v 0 c -0.778,0 -1.575,-0.242 -2.285,-0.778"
+           transform="matrix(1.3333333,0,0,-1.3333333,2766.2533,226.772)"
+           style="fill:url(#linearGradient352);stroke:none" />
+        <path
+           id="path357"
+           d="m 172.68,125.3 c -2.108,0 -3.817,-1.709 -3.817,-3.818 v 0 -36.31 c 0,-3.152 3.602,-4.947 6.117,-3.048 v 0 l 51.693,36.312 c 2.923,2.206 1.363,6.864 -2.3,6.864 v 0 z"
+           transform="matrix(1.3333333,0,0,-1.3333333,2766.2533,226.772)"
+           style="fill:url(#linearGradient357);stroke:none" />
+        <path
+           id="path358"
+           d="m 0,0 h -9.555 c -2.036,0 -3.686,1.65 -3.686,3.686 v 45.597 c 0,1.158 0.543,2.248 1.468,2.944 l 9.555,6.625 c 2.522,1.74 5.904,0.098 5.904,-2.944 V 3.686 C 3.686,1.65 2.036,0 0,0"
+           style="fill:#c8c7c7;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           transform="matrix(1.3333333,0,0,-1.3333333,3065.6733,161.10493)"
+           clip-path="url(#clipPath359)" />
+      </g>
+    </g>
+  </g>
+</svg>
