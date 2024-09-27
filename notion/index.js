@@ -5,7 +5,7 @@ config();
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { Downloader } from "nodejs-file-downloader";
-import { existsSync, write } from "fs";
+import { existsSync, writeFile } from "fs";
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const n2m = new NotionToMarkdown({ notionClient: notion });
@@ -17,7 +17,7 @@ const download = async (url, path) => {
   const filePath = `${path}/${fileName}`;
 
   if (existsSync(filePath)) {
-    return filePath;
+    return filePath.replace('assets/', '');
   }
 
   const downloader = new Downloader({
@@ -25,11 +25,11 @@ const download = async (url, path) => {
     directory: path,
   });
 
-  return (await downloader.download()).filePath;
+  return (await downloader.download()).filePath.replace('assets/', '');
 }
 
 const writeProject = (project) => {
-  const path = `content/projects/${project.title}.md`;
+  const path = `content/projekte/${project.title}.md`;
 
   const content = `---
 title: "${project.title}"
@@ -43,15 +43,17 @@ images: ${JSON.stringify(project.images)}
 notionUrl: "${project.notionUrl}"
 ---
 
-${project.content}
-`;
+${project.content}`;
 
-    write(path, content, (err) => {
+  writeFile(path,
+    content,
+    (err) => {
       if (err) {
         throw err;
       }
     }
   );
+};
 
 
 const loadProjects = async () => {
