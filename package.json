@@ -1,0 +1,19 @@
+{
+  "name": "sit.institute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "notion/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node notion/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "dotenv": "^16.4.5",
+    "nodejs-file-downloader": "^4.13.0",
+    "notion-to-md": "^3.1.1"
+  }
+}
