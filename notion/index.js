@@ -45,7 +45,11 @@ n2m.setCustomTransformer("image", async (block) => {
 
 const writeContent = (content, section) => {
   const path = `content/${section}/${content.title}.md`;
-  const frontmatter = YAML.stringify({ ...content, markdown: undefined })
+  const frontmatter = YAML.stringify({
+    ...content,
+    markdown: undefined,
+    include_footer: true
+  });
 
   writeFile(path,
     `---\n${frontmatter}---\n\n${content.markdown}`,
@@ -60,7 +64,7 @@ const writeContent = (content, section) => {
 
 const loadProjects = async () => {
   const response = await notion.databases.query({
-    database_id: "10ebe61fc1ef8083bb97cf9570d334ae"
+    database_id: process.env.NOTION_DATABASE_ID_PROJECTS,
   });
 
   for (const page of response.results) {

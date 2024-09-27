@@ -10,6 +10,7 @@ lastmod: 2024-09-27T10:11:00.000Z
 notionUrl: https://www.notion.so/Test-Projekt-Name-10ebe61fc1ef80eba02cf14dcb1d0e24
 images:
   - images/azores-wallpaper-3840x2160.jpg
+include_footer: true
 ---
 
 
