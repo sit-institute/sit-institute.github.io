@@ -5,13 +5,13 @@ config();
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { Downloader } from "nodejs-file-downloader";
-import { existsSync } from "fs";
+import { existsSync, write } from "fs";
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 const download = async (url, path) => {
-  path = `static/${path}`;
+  path = `assets/${path}`;
 
   const fileName = url.split('?')[0].split('/').pop();
   const filePath = `${path}/${fileName}`;
@@ -27,6 +27,32 @@ const download = async (url, path) => {
 
   return (await downloader.download()).filePath;
 }
+
+const writeProject = (project) => {
+  const path = `content/projects/${project.title}.md`;
+
+  const content = `---
+title: "${project.title}"
+date: "${project.date}"
+lastmod: "${project.lastmod}"
+publishDate: "${project.publishDate}"
+expiryDate: "${project.expiryDate}"
+summary: "${project.summary}"
+tags: ${JSON.stringify(project.tags)}
+images: ${JSON.stringify(project.images)}
+notionUrl: "${project.notionUrl}"
+---
+
+${project.content}
+`;
+
+    write(path, content, (err) => {
+      if (err) {
+        throw err;
+      }
+    }
+  );
+
 
 const loadProjects = async () => {
   const response = await notion.databases.query({
@@ -45,6 +71,7 @@ const loadProjects = async () => {
 
     project["date"] = page.created_time;
     project["lastmod"] = page.last_edited_time;
+    project["notionUrl"] = page.url;
 
     if (!project["publishDate"]) {
       continue;
@@ -58,7 +85,10 @@ const loadProjects = async () => {
       project["images"] = [];
     }
 
-    console.log(project);
+    const mdblocks = await n2m.pageToMarkdown(page.id);
+    project["content"] = n2m.toMarkdownString(mdblocks).parent;
+
+    writeProject(project);
   }
 };
 
