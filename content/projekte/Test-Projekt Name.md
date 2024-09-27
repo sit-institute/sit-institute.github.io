@@ -1,17 +1,16 @@
 ---
-title: "Test-Projekt Name"
-date: "2024-09-27T08:33:00.000Z"
-lastmod: "2024-09-27T10:10:00.000Z"
-publishDate: "2024-09-25"
-expiryDate: "null"
-summary: "Describe me!"
-tags: ["n8n","nifi"]
-images: ["images/azores-wallpaper-3840x2160.jpg"]
-notionUrl: "https://www.notion.so/Test-Projekt-Name-10ebe61fc1ef80eba02cf14dcb1d0e24"
+title: Test-Projekt Name
+publishDate: 2024-09-25
+summary: Describe me!
+tags:
+  - n8n
+  - nifi
+date: 2024-09-27T08:33:00.000Z
+lastmod: 2024-09-27T10:11:00.000Z
+notionUrl: https://www.notion.so/Test-Projekt-Name-10ebe61fc1ef80eba02cf14dcb1d0e24
+images:
+  - images/azores-wallpaper-3840x2160.jpg
 ---
-
-
-# Hugo Notion
 
 
 Hello World! Oder so…

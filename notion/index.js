@@ -7,7 +7,7 @@ import { NotionToMarkdown } from "notion-to-md";
 import { Downloader } from "nodejs-file-downloader";
 import { existsSync, writeFile, readFileSync } from "fs";
 import { unlinkSync } from "fs";
-import { join } from "path";
+import YAML from 'yaml';
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const n2m = new NotionToMarkdown({ notionClient: notion });
@@ -43,25 +43,12 @@ n2m.setCustomTransformer("image", async (block) => {
   }
 });
 
-const writeProject = (project) => {
-  const path = `content/projekte/${project.title}.md`;
-
-  const content = `---
-title: "${project.title}"
-date: "${project.date}"
-lastmod: "${project.lastmod}"
-publishDate: "${project.publishDate}"
-expiryDate: "${project.expiryDate}"
-summary: "${project.summary}"
-tags: ${JSON.stringify(project.tags)}
-images: ${JSON.stringify(project.images)}
-notionUrl: "${project.notionUrl}"
----
-
-${project.content}`;
+const writeContent = (content, section) => {
+  const path = `content/${section}/${content.title}.md`;
+  const frontmatter = YAML.stringify({ ...content, markdown: undefined })
 
   writeFile(path,
-    content,
+    `---\n${frontmatter}---\n\n${content.markdown}`,
     (err) => {
       if (err) {
         throw err;
@@ -82,7 +69,7 @@ const loadProjects = async () => {
     
     project["title"] = props.Name.title[0].plain_text;
     project["publishDate"] = props.Publikation.date?.start;
-    project["expiryDate"] = props.Publikation.date?.end;
+    project["expiryDate"] = props.Publikation.date?.end ?? undefined;
     project["summary"] = props.Zusammenfassung.rich_text[0].plain_text;
     project["tags"] = props.Tags.multi_select.map((tag) => tag.name);
 
@@ -103,9 +90,9 @@ const loadProjects = async () => {
     }
 
     const mdblocks = await n2m.pageToMarkdown(page.id);
-    project["content"] = n2m.toMarkdownString(mdblocks).parent;
+    project["markdown"] = n2m.toMarkdownString(mdblocks).parent;
 
-    writeProject(project);
+    writeContent(project, "projekte");
   }
 };
 
