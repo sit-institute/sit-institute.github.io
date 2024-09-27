@@ -5,28 +5,43 @@ config();
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { Downloader } from "nodejs-file-downloader";
-import { existsSync, writeFile } from "fs";
+import { existsSync, writeFile, readFileSync } from "fs";
+import { unlinkSync } from "fs";
+import { join } from "path";
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
-const download = async (url, path) => {
-  path = `assets/${path}`;
+const previousImages = JSON.parse(readFileSync("notion/images.json", "utf8"));
+const currentImages = [];
 
+const download = async (url, path) => {
   const fileName = url.split('?')[0].split('/').pop();
-  const filePath = `${path}/${fileName}`;
+  const filePath = `assets/${path}/${fileName}`;
+
+  currentImages.push(filePath);
 
   if (existsSync(filePath)) {
-    return filePath.replace('assets/', '');
+    return `${path}/${fileName}`;
   }
 
   const downloader = new Downloader({
     url: url,
-    directory: path,
+    directory: `assets/${path}`,
   });
 
-  return (await downloader.download()).filePath.replace('assets/', '');
+  return (await downloader.download()).filePath;
 }
+
+n2m.setCustomTransformer("image", async (block) => {
+  const { image } = block;
+  
+  if (image.type == "external") {
+    return `![${image.caption}](${image.external.url})`;
+  } else if (image.type == "file") {
+    return `![${image.caption}](${(await download(image.file.url, "images")).replace("assets/", "")})`;
+  }
+});
 
 const writeProject = (project) => {
   const path = `content/projekte/${project.title}.md`;
@@ -94,9 +109,23 @@ const loadProjects = async () => {
   }
 };
 
+const deleteUnusedImages = async () => {
+  previousImages.forEach((imagePath) => {
+    if (!currentImages.includes(imagePath)) {
+      if (existsSync(imagePath)) {
+        unlinkSync(imagePath);
+      }
+    }
+  });
+
+  writeFile("notion/images.json", JSON.stringify(currentImages, null, 2), (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+};
+
 (async () => {
   await loadProjects();
-  // const mdblocks = await n2m.pageToMarkdown(process.env.NOTION_PAGE_ID);
-  // const mdString = n2m.toMarkdownString(mdblocks);
-  // console.log(mdblocks);
+  await deleteUnusedImages();
 })();
