@@ -1,7 +1,6 @@
 baseURL = 'https://sit-institute/'
 languageCode = 'de-DE'
 title = 'sit.institute GmbH'
-theme = "coming-soon"
 
 [params]
     title = "sit.institute" 
