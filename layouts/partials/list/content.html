@@ -25,14 +25,17 @@
                                 {{ end }}
                             </a>
                             <div style="position: absolute; top: 0; right: 0;">
-                                <span class="tag is-primary mt-2 mr-2 px-2">14 Tasks</span>{{/* TODO */}}
-                                <span class="tag is-primary mt-2 mr-2 px-2">14 Tasks</span>{{/* TODO */}}
+                                {{ range .Params.tags }}
+                                <span class="button secondary-btn is-rounded raised is-small mt-2 mr-2 px-2">{{ . }}</span>
+                                {{ end }}
                             </div>
                         </div>
                         <div class="card-content">
                             <div class="content">
                                 <div>
-                                    <h2 class="title is-4">{{ .Params.title }}</h2>
+                                    <a href="{{ .RelPermalink }}">
+                                        <h2 class="title is-4">{{ .Title }}</h2>
+                                    </a>
                                     <p class="summary">{{ .Params.summary }}</p>
                                 </div>
                             </div>
@@ -41,11 +44,14 @@
                             <div class="card-footer-item" style="width: 100%;">
                                 <div class="is-flex is-justify-content-space-between is-align-items-center" style="width: 100%;">
                                     <div class="is-flex is-align-items-center">
-                                        {{/* TODO */}}
-                                        <img class="image is-32x32 is-cover" style="border-radius: 50% !important;" 
-                                        src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&crop=faces&fit=crop&h=128&w=128" alt="alt">
+                                        {{ $author := resources.GetRemote .Params.author.avatar }}
+                                        {{ $authorName := .Params.author.name }}
+                                        {{ with $author.Fill "32x32 center webp q85" }}
+                                        <img class="image is-32x32 is-cover" style="border-radius: 50% !important;"
+                                            src="{{ .RelPermalink }}" alt="{{ $authorName }}" title="{{ $authorName }}">
+                                        {{ end }}
                                     </div>
-                                    {{ with .RelPermalink }}<a class="button is-small primary-btn raised is-clear ml-auto" href="{{ . }}">weiterlesen</a>{{ end}}
+                                    {{ with .RelPermalink }}<a class="button primary-btn raised is-clear ml-auto" href="{{ . }}">weiterlesen</a>{{ end}}
                                 </div>
                             </div>
                         </div>
@@ -73,6 +79,7 @@
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 3; /* Anzahl der angezeigten Zeilen */
+                        line-clamp: 3; /* Standard property for compatibility */
                         overflow: hidden;
                         text-overflow: ellipsis;
                         height: 100%; /* Füllt den verfügbaren Raum */

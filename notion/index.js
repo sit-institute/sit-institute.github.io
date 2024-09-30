@@ -77,6 +77,10 @@ const loadProjects = async () => {
     project["expiryDate"] = props.Publikation.date?.end ?? undefined;
     project["summary"] = props.Zusammenfassung.rich_text[0].plain_text;
     project["tags"] = props.Tags.multi_select.map((tag) => tag.name);
+    project["author"] = {
+      name: props.Autor.people[0].name,
+      avatar: props.Autor.people[0].avatar_url
+    };
 
     project["date"] = page.created_time;
     project["lastmod"] = page.last_edited_time;

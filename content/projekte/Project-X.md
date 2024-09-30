@@ -8,8 +8,11 @@ summary: Project-X is a horizontally scrolling shooter for the Amiga released in
 tags:
   - n8n
   - nifi
+author:
+  name: Peter
+  avatar: https://s3-us-west-2.amazonaws.com/public.notion-static.com/e182a09e-e735-4e8a-af57-1a256e62ae88/1722775800036.jpeg
 date: 2024-09-30T09:16:00.000Z
-lastmod: 2024-09-30T09:20:00.000Z
+lastmod: 2024-09-30T11:52:00.000Z
 notionUrl: https://www.notion.so/Project-X-111be61fc1ef80a2ac51d8cb2441cb00
 images:
   - images/woodcuts_sekka_1.jpg
