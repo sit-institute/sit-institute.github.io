@@ -30,7 +30,7 @@ const download = async (url, path) => {
     directory: `assets/${path}`,
   });
 
-  return (await downloader.download()).filePath;
+  return (await downloader.download()).filePath.replace("assets/", "");
 }
 
 n2m.setCustomTransformer("image", async (block) => {
@@ -86,7 +86,7 @@ const loadProjects = async () => {
     }
 
     if (page.cover?.type == "external") {
-      project["images"] = [page.cover.external.url];
+      project["images"] = [await download(page.cover.external.url, "images")];
     } else if (page.cover?.type == "file") {
       project["images"] = [await download(page.cover.file.url, "images")];
     } else {

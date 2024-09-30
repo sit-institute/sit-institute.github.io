@@ -25,7 +25,7 @@ params:
   # Used as meta data; describe your site to make Google Bots happy
   description:
   # Preloader ensures images are loaded before displaying to the user. If you don't want it uncomment to set it to false
-  # preloader: false
+  preloader: false
   navbarlogo:
   # Logo (from static/images/logos/___)
     image: logos/einzeiler-farbig.svg
