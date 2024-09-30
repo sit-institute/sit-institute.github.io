@@ -5,9 +5,10 @@ config();
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { Downloader } from "nodejs-file-downloader";
-import { existsSync, writeFile, readFileSync } from "fs";
+import { existsSync, writeFile, readFileSync, readdirSync } from "fs";
 import { unlinkSync } from "fs";
 import YAML from 'yaml';
+import { join } from "path";
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const n2m = new NotionToMarkdown({ notionClient: notion });
@@ -116,7 +117,19 @@ const deleteUnusedImages = async () => {
   });
 };
 
+const deleteProjectFiles = async () => {
+  const path = "content/projekte";
+  const files = readdirSync("content/projekte");
+
+  files.forEach((file) => {
+    if (file !== "_index.md" && file.endsWith(".md")) {
+      unlinkSync(join(path, file));
+    }
+  });
+};
+
 (async () => {
+  await deleteProjectFiles();
   await loadProjects();
   await deleteUnusedImages();
 })();
