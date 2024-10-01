@@ -31,8 +31,8 @@ params:
     image: logos/einzeiler-farbig.svg
     link: /
     # Default width/height. Uncomment if you need to change
-    # width: 112
-    # height: 28
+    width: 90
+    height: 200
   font:
     name: "Open Sans"
     sizes: [400,600]
@@ -62,20 +62,20 @@ params:
       url: https://bulma.io/
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   navbar:
+  - title: Leistungen
+    sublinks:
+    - title: KI-Lösungen
+      url: /leistungen/ki-loesungen
+    - title: Datenintegration
+      url: /leistungen/datenintegration
+    - title: Softwareentwicklung
+      url: /leistungen/softwareentwicklung
+    - title: IT-Beratung
+      url: /leistungen/it-beratung
   - title: Projekte
     url: /projekte
-  # - title: Pricing
-  #   url: /
-  # - title: Dropdown
-  #   sublinks:
-  #   - title: Dropdown item
-  #     url: /
-  #   - title: Dropdown item
-  #     url: /
-  #   - title: Dropdown item
-  #     url: /
-  # - title: Log in
-  #   url: /
+  # - title: Blog
+  #   url: /blog
   - title: kennenlernen
     url: /kennenlernen
     button: true
@@ -176,23 +176,19 @@ params:
     # method: POST
   footer:
     # Logo (from static/images/logos/___)
-    logo: fresh-white-alt.svg
+    logo: einzeiler-weiß.svg
     # Social Media Title
-    socialmediatitle: Follow Us
+    socialmediatitle: Kontakt
     # Social media links (GitHub, Twitter, etc.). All are optional.
     socialmedia:
-    - link: https://github.com/StefMa
+    - link: https://www.linkedin.com/company/sit-institute/
       # Icons are from Font Awesome
+      icon: linkedin
+    - link: https://github.com/sit-institute
       icon: github
-    - link: https://dribbble.com/#
-      icon: dribbble
-    - link: https://facebook.com/#
-      icon: facebook
-    - link: https://twitter.com/StefMa91
-      icon: twitter
-    - link: https://bitbucket.org/#
-      icon: bitbucket
-    bulmalogo: true
+    - link: mailto:info@sit.institute
+      icon: envelope
+    bulmalogo: false
     quicklinks:
       column1:
         title: "Product"
